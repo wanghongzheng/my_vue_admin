@@ -1,22 +1,14 @@
 <template>
-  <div style="text-align: left; padding-top: 10px">
+  <div class="NavBarContain">
     <el-button @click="toggleSidebar" align="left">
-      <i class="el-icon-s-fold"></i
-    ></el-button>
-    <span style="margin-left: 10px">首页</span>
+      <i class="el-icon-s-fold"></i>
+    </el-button>
+    <span class="currentPage">首页</span>
     <el-dropdown trigger="click" :hide-on-click="false" class="userSetting">
       <span class="el-dropdown-link">
-        <i
-          class="el-icon-user-solid"
-          style="
-            color: #64d9d6;
-            border-radius: 50%;
-            color: rgb(100, 217, 214);
-            border-radius: 50%;
-            border: 1px solid rgb(100, 217, 214);
-            font-size: 20px;
-          "
-        />用户<i class="el-icon-arrow-down el-icon--right"></i>
+        <i class="el-icon-user-solid" />
+        用户
+        <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item icon="el-icon-plus">修改密码</el-dropdown-item>
@@ -47,10 +39,25 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss" scoped>
+.NavBarContain {
+  text-align: left;
+  padding-top: 10px;
+  .currentPage {
+    margin-left: 10px;
+  }
+  .el-icon-user-solid {
+    color: #64d9d6;
+    border-radius: 50%;
+    color: rgb(100, 217, 214);
+    border-radius: 50%;
+    border: 1px solid rgb(100, 217, 214);
+    font-size: 20px;
+  }
+}
 .userSetting {
   float: right;
-  right: 40px;
+  right: 15px;
   margin-top: 5px;
 }
 </style>
