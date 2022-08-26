@@ -15,14 +15,11 @@ export default new VueRouter({
     },
     {
       path: "/layout",
-      component: (resolve) => require(["../views/layout/index"], resolve),
-      children: [
-        {
-          path: "main",
-          component: (resolve) =>
-            require(["../views/layout/main/index"], resolve),
-        },
-      ],
+      component: (resolve) => require(["../layout/index"], resolve),
+    },
+    {
+      path: "/main",
+      component: (resolve) => require(["../views/main/index"], resolve),
     },
   ],
 });
