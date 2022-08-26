@@ -32,6 +32,7 @@ export default {
       } else {
         this.isCollapse = true;
       }
+      this.$store.dispatch("toggleSidebarStatus", this.isCollapse);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);

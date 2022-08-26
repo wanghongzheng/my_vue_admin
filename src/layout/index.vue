@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside class="sidebar"><sidebar></sidebar></el-aside>
+    <el-aside><sidebar></sidebar></el-aside>
     <el-container>
       <el-header class="header"><NavBar></NavBar> </el-header>
       <el-main class="main"> <router-view></router-view></el-main>
@@ -22,6 +22,11 @@ export default {
   },
 };
 </script>
+<style>
+.el-aside {
+  width: auto !important;
+}
+</style>
 <style scoped lang="scss">
 .el-container {
   height: 100%;

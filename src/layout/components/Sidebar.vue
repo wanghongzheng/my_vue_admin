@@ -1,10 +1,14 @@
 <template>
   <el-menu
     default-active="1-4-1"
-    class="el-menu-vertical-demo"
+    :class="
+      toggleStatus
+        ? 'el-menu-vertical-demo collapseNavBar'
+        : 'el-menu-vertical-demo expendNavBar'
+    "
     @open="handleOpen"
     @close="handleClose"
-    :collapse="isCollapse"
+    :collapse="toggleStatus"
     background-color="#112F5E"
     text-color="#fff"
     active-text-color="#ffd04b"
@@ -45,7 +49,13 @@
 export default {
   name: "rightHeader",
   data() {
-    return { isCollapse: false };
+    return {};
+  },
+  computed: {
+    toggleStatus: function () {
+      console.info(this.$store);
+      return this.$store.state.isCollapse;
+    },
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -58,11 +68,22 @@ export default {
 };
 </script>
 <style lang="scss">
+.el-aside {
+  width: auto !important;
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
+  height: 100%;
+  background: #112f5e;
 }
 .el-menu-vertical-demo {
-  margin-top: 20px;
+  background: #112f5e;
+  height: 100%;
+}
+.expendNavBar {
+  width: 200px;
+}
+.collapseNavBar {
+  width: 70px;
 }
 </style>
