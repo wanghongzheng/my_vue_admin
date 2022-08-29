@@ -21,5 +21,20 @@ export default new VueRouter({
       path: "/main",
       component: (resolve) => require(["../views/main/index"], resolve),
     },
+    {
+      path: "/newsMange",
+      children: [
+        {
+          path: "news",
+          component: (resolve) =>
+            require(["../views/newsMange/news/index"], resolve),
+        },
+        {
+          path: "policy",
+          component: (resolve) =>
+            require(["../views/newsMange/policy/index"], resolve),
+        },
+      ],
+    },
   ],
 });
